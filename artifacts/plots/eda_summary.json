@@ -1,0 +1,22 @@
+{
+  "records": 303,
+  "features": 13,
+  "positive_rate": 0.4587,
+  "duplicate_rows": 0,
+  "missing_by_column": {
+    "ca": 4,
+    "thal": 2,
+    "age": 0,
+    "sex": 0,
+    "cp": 0,
+    "trestbps": 0,
+    "chol": 0,
+    "fbs": 0,
+    "restecg": 0,
+    "thalach": 0,
+    "exang": 0,
+    "oldpeak": 0,
+    "slope": 0,
+    "target": 0
+  }
+}

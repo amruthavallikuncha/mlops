@@ -1,0 +1,62 @@
+{
+  "model_name": "logistic_regression",
+  "selected_by": "highest 5-fold cross-validated ROC-AUC on the training partition",
+  "trained_at_utc": "2026-07-11T15:09:49.755199+00:00",
+  "random_state": 523,
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "training_records": 242,
+  "held_out_records": 61,
+  "metrics": {
+    "cv_roc_auc": 0.910677004155265,
+    "test_accuracy": 0.8032786885245902,
+    "test_precision": 0.7666666666666667,
+    "test_recall": 0.8214285714285714,
+    "test_f1": 0.7931034482758621,
+    "test_roc_auc": 0.9318181818181818
+  },
+  "all_results": [
+    {
+      "model": "logistic_regression",
+      "best_params": {
+        "classifier__C": 0.2,
+        "classifier__class_weight": null
+      },
+      "cv_roc_auc": 0.910677004155265,
+      "test_accuracy": 0.8032786885245902,
+      "test_precision": 0.7666666666666667,
+      "test_recall": 0.8214285714285714,
+      "test_f1": 0.7931034482758621,
+      "test_roc_auc": 0.9318181818181818
+    },
+    {
+      "model": "random_forest",
+      "best_params": {
+        "classifier__class_weight": "balanced",
+        "classifier__max_depth": 5,
+        "classifier__min_samples_leaf": 3,
+        "classifier__n_estimators": 300
+      },
+      "cv_roc_auc": 0.8979454522932784,
+      "test_accuracy": 0.819672131147541,
+      "test_precision": 0.7575757575757576,
+      "test_recall": 0.8928571428571429,
+      "test_f1": 0.819672131147541,
+      "test_roc_auc": 0.9134199134199135
+    }
+  ],
+  "limitations": " Model trained on a small historical cohort - not for clinical diagnosis."
+}

@@ -1,0 +1,18 @@
+{
+  "annotations": {"list": []},
+  "editable": true,
+  "panels": [
+    {"type":"timeseries","title":"Request rate","targets":[{"expr":"sum(rate(heart_api_requests_total[1m]))","legendFormat":"requests/s"}],"gridPos":{"h":8,"w":12,"x":0,"y":0}},
+    {"type":"timeseries","title":"95th percentile latency","targets":[{"expr":"histogram_quantile(0.95, sum(rate(heart_api_request_duration_seconds_bucket[5m])) by (le))","legendFormat":"p95 seconds"}],"gridPos":{"h":8,"w":12,"x":12,"y":0}},
+    {"type":"bargauge","title":"Predictions by label","targets":[{"expr":"sum(heart_api_predictions_total) by (label)","legendFormat":"{{label}}"}],"gridPos":{"h":8,"w":12,"x":0,"y":8}},
+    {"type":"timeseries","title":"HTTP errors","targets":[{"expr":"sum(rate(heart_api_requests_total{status=~\"4..|5..\"}[5m])) by (status)","legendFormat":"HTTP {{status}}"}],"gridPos":{"h":8,"w":12,"x":12,"y":8}}
+  ],
+  "schemaVersion": 40,
+  "tags": ["mlops", "heart-risk"],
+  "templating": {"list": []},
+  "time": {"from":"now-30m","to":"now"},
+  "title": "Heart Risk API Operations",
+  "uid": "heart-risk-api",
+  "version": 1
+}
+
